@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xavier's Stock</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><span class="brand-accent">Xavier's</span> Stock</h1>
+    </header>
+    <p class="subtitle">Global &amp; PSE Watchlist, Live Chart Preview &amp; Multi-Screener Launcher</p>
+
+    <h2>Top Free Screeners by Market &amp; Strategy</h2>
+    <div class="screener-grid">
+      <a class="screener-card" href="https://tradingview.com" target="_blank" rel="noopener">
+        <div>
+          <div class="screener-title">TradingView Stock Screener ↗</div>
+          <span class="screener-badge">Global + PSE (280+ PH stocks)</span>
+          <div class="screener-desc">Technical charting &amp; global scanning with 100+ built-in technical indicators, real-time heatmaps, and custom metric columns.</div>
+        </div>
+      </a>
+
+      <a class="screener-card" href="https://finviz.com" target="_blank" rel="noopener">
+        <div>
+          <div class="screener-title">Finviz Stock Screener ↗</div>
+          <span class="screener-badge">US Markets (NYSE, NASDAQ, AMEX)</span>
+          <div class="screener-desc">Fast US fundamental &amp; swing-trade scans with single-page filters, visual patterns, and S&amp;P 500 performance heatmaps.</div>
+        </div>
+      </a>
+
+      <a class="screener-card" href="https://stockanalysis.com" target="_blank" rel="noopener">
+        <div>
+          <div class="screener-title">Stock Analysis Screener ↗</div>
+          <span class="screener-badge">US &amp; Global</span>
+          <div class="screener-desc">Deep fundamental filtering with over 300 free filters across valuation, dividends, analyst ratings, and financial ratios.</div>
+        </div>
+      </a>
+
+      <a class="screener-card" href="https://marketshack.com" target="_blank" rel="noopener">
+        <div>
+          <div class="screener-title">MarketShack PSE Screener ↗</div>
+          <span class="screener-badge">Philippines (PSE)</span>
+          <div class="screener-desc">Dedicated Philippine Stock Exchange analysis filtering all 284 PSE-listed companies by P/E ratio, ROE, net foreign flows, and performance.</div>
+        </div>
+      </a>
+
+      <a class="screener-card" href="https://investing.com" target="_blank" rel="noopener">
+        <div>
+          <div class="screener-title">Investing.com PH Screener ↗</div>
+          <span class="screener-badge">Philippines &amp; Global (160,000+ stocks)</span>
+          <div class="screener-desc">Quick PHP-denominated &amp; global screens with pre-built sector screens, dividend yield filters, and local currency (PHP) pricing.</div>
+        </div>
+      </a>
+    </div>
+
+    <h2>Live Chart Preview (TradingView)</h2>
+    <div class="chart-box">
+      <div class="chart-header">
+        <span>Selected Ticker: <strong id="activeChartLabel">TSE:7203</strong></span>
+        <span>Click "Chart" on any row below to switch</span>
+      </div>
+      <div id="tvChartContainer"></div>
+    </div>
+
+    <h2>Xavier's Watchlist &amp; Direct Screener Launcher</h2>
+    <div class="controls">
+      <select id="marketInput">
+        <option value="INTL">International</option>
+        <option value="PSE">Philippines (PSE)</option>
+        <option value="US">US Market</option>
+      </select>
+      <input id="symbolInput" type="text" placeholder="Ticker (e.g., TSE:7203, LSE:HSBA, PSE:SM, NVDA)" />
+      <input id="nameInput" type="text" placeholder="Company Name (e.g., Toyota Motor)" />
+      <button id="addStockBtn" type="button">Add Stock</button>
+    </div>
+
+    <div class="filter-bar">
+      <div class="filter-group" id="filterGroup">
+        <button class="filter-btn active" data-market="ALL" type="button">All Markets</button>
+        <button class="filter-btn" data-market="INTL" type="button">International</button>
+        <button class="filter-btn" data-market="PSE" type="button">Philippines (PSE)</button>
+        <button class="filter-btn" data-market="US" type="button">US Markets</button>
+      </div>
+      <input id="searchInput" type="text" placeholder="Filter watchlist..." />
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Ticker</th>
+            <th>Market</th>
+            <th>Company</th>
+            <th>Open in Screener / Quote</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="watchlistBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
